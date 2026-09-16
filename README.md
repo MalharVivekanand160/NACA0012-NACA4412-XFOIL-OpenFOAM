@@ -252,6 +252,25 @@ This sanitization does not change solver output, convergence histories,
 aerodynamic coefficients, mesh diagnostics, or OpenFOAM version
 information.
 
+### Historical workflow scripts
+
+The `provenance/` directories also contain historical scripts used during
+the thesis-production workflow, including separation extraction, drag
+decomposition, Stage-7 physics plotting, and the SA/SSTLM sweep-generation
+workflow.
+
+These files are retained for traceability and are not all intended to be
+portable standalone entry points.
+
+In particular, the authoritative final model-sensitivity subset is the
+29-case dataset under `08_model_sensitivity/final_common_range/` together
+with `build_final_thesis_sensitivity_dataset.py`.
+
+Likewise, historical high-angle NACA 4412 diagnostic processing should
+not be interpreted as replacing the final convergence policy: the
+15, 15.5, and 16 degree SST cases remain non-converged and are excluded
+from the accepted common-range quantitative comparison.
+
 ## Figure reproducibility
 
 The archived PNG figures corresponding to the submitted thesis identify
