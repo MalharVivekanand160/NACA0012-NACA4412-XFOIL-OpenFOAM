@@ -1,0 +1,49 @@
+NACA4412 SHARP-TE GEOMETRY VERIFICATION
+=======================================
+
+OpenFOAM geometry definition:
+    m = 0.04
+    p = 0.40
+    t = 0.12
+
+The standard NACA four-digit mean-camber-line formulation is used.
+
+Thickness distribution uses the closed-TE coefficient:
+    -0.1036
+
+Thickness is applied normal to the mean camber line:
+
+    theta = atan(dyc/dx)
+
+    xu = xc - yt*sin(theta)
+    yu = yc + yt*cos(theta)
+
+    xl = xc + yt*sin(theta)
+    yl = yc - yt*cos(theta)
+
+XFOIL source geometry:
+    NACA4412_SHARP_TE_V9.dat
+
+OpenFOAM reference source geometry:
+    naca4412_sharp_te_coordinates.dat
+
+Number of coordinates:
+    XFOIL   = 321
+    OpenFOAM = 321
+
+Direct coordinate-array comparison:
+
+    Maximum |dx| = 0.000000000000e+00
+    Maximum |dy| = 0.000000000000e+00
+    Mean    |dx| = 0.000000000000e+00
+    Mean    |dy| = 0.000000000000e+00
+
+Both source arrays begin and end at:
+    (x/c, y/c) = (1.0, 0.0)
+
+Conclusion:
+The NACA4412 XFOIL reference and OpenFOAM production setup use exactly
+the same sharp-trailing-edge source-coordinate geometry.
+
+XFOIL and OpenFOAM subsequently use different numerical discretizations
+of this common geometry.

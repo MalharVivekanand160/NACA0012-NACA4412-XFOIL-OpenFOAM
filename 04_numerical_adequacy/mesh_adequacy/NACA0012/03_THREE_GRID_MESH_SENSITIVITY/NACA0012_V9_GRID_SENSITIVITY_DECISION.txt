@@ -1,0 +1,135 @@
+NACA 0012 V9 — FINAL GRID SENSITIVITY DECISION
+================================================
+
+Model:
+- OpenFOAM 13
+- Steady incompressible RANS
+- k-omega SST
+- Re = 1.0e6
+- U_inf = 15 m/s
+- Chord = 1 m
+
+Systematic grid family:
+- Coarse:      82,642 cells
+- Baseline V9: 165,220 cells
+- Fine:        330,750 cells
+
+Characteristic spatial refinement ratios:
+- Coarse -> V9:  r = 1.41394
+- V9 -> Fine:    r = 1.41488
+- Target: sqrt(2) = 1.41421
+
+The first-layer spacing was also systematically scaled:
+- h1_coarse / h1_V9 = 1.41421356
+- h1_V9 / h1_fine   = 1.41421356
+
+All new coarse and fine meshes:
+- purely hexahedral
+- retained the same geometry/topology family
+- passed OpenFOAM checkMesh
+- used airfoil type wall
+- used frontAndBack type empty
+
+COARSE mesh quality:
+- Cells: 82,642
+- Max aspect ratio: 194.347
+- Max non-orthogonality: 47.4622 deg
+- Average non-orthogonality: 11.4018 deg
+- Max skewness: 1.73051
+- checkMesh: Mesh OK
+
+FINE mesh quality:
+- Cells: 330,750
+- Max aspect ratio: 214.183
+- Max non-orthogonality: 48.1435 deg
+- Average non-orthogonality: 11.3986 deg
+- Max skewness: 1.7542
+- checkMesh: Mesh OK
+
+------------------------------------------------
+AoA = 0 deg
+------------------------------------------------
+
+Coarse:
+CL = 0.000144135
+CD = 0.010510098
+Cm = 0.000010046
+Converged at iteration 970
+
+Baseline V9:
+CL = 0.000577919
+CD = 0.010548788
+Cm = 0.000044598
+Converged at iteration 1770
+
+Fine:
+CL = 0.000870312
+CD = 0.010624253
+Cm = 0.000085800
+Converged at iteration 2075
+
+Baseline V9 -> Fine:
+- Delta CD = +0.000075465
+- Delta CD = +0.7154 %
+
+CL and Cm are close to zero at AoA=0 deg for the symmetric NACA0012.
+Relative percentage differences in these near-zero quantities are therefore
+not physically useful; their absolute magnitudes remain very small.
+
+------------------------------------------------
+AoA = 14 deg
+------------------------------------------------
+
+Coarse:
+CL = 1.281310270
+CD = 0.036300839
+Cm = -0.024983632
+Converged at iteration 1944
+
+Baseline V9:
+CL = 1.279136810
+CD = 0.036289733
+Cm = -0.024783991
+Converged at iteration 3234
+
+Fine:
+CL = 1.266052050
+CD = 0.036680658
+Cm = -0.025622922
+Converged at iteration 4907
+
+Baseline V9 -> Fine:
+- Delta CL = -0.013084760
+- Delta CL = -1.0229 %
+
+- Delta CD = +0.000390925
+- Delta CD = +1.0772 %
+
+- Delta Cm = -0.000838931
+- Change in |Cm| = +3.3850 %
+
+------------------------------------------------
+FINAL ASSESSMENT
+------------------------------------------------
+
+The 165,220-cell V9 production mesh is considered sufficiently
+mesh-insensitive for the principal aerodynamic force coefficients CL and CD.
+
+Doubling the cell count from 165,220 to 330,750 changed:
+- CD by approximately 0.72 % at AoA = 0 deg
+- CL by approximately 1.02 % at AoA = 14 deg
+- CD by approximately 1.08 % at AoA = 14 deg
+
+Cm exhibits somewhat greater sensitivity at AoA = 14 deg (~3.4 %).
+
+A formal Grid Convergence Index (GCI) is NOT reported because all quantities
+do not demonstrate a consistent asymptotic/monotonic convergence sequence
+across the three grids. The study is therefore reported as a systematic
+three-grid mesh-sensitivity assessment rather than a formal asymptotic
+GCI demonstration.
+
+FINAL DECISION:
+Retain the 165,220-cell V9 mesh for the production NACA0012 simulations.
+
+STATUS:
+NACA0012 V9 GRID / MESH SENSITIVITY VALIDATION COMPLETE.

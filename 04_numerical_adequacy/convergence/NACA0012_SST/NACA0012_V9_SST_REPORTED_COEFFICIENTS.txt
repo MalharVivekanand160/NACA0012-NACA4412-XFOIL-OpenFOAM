@@ -1,0 +1,26 @@
+NACA0012 V9 SST — AUTHORITATIVE REPORTED COEFFICIENTS
+=====================================================
+
+All 12 cases satisfied the OpenFOAM SIMPLE residualControl criteria.
+
+Reporting rule:
+  All cases: final formally converged iteration.
+  No iterative-window averaging is used for NACA0012 SST.
+
+Cm values are RAW OpenFOAM values. Moment-sign convention/alignment
+is intentionally handled separately from this source dataset.
+
+   AoA     Status  Iteration           Cl           Cd       Cm_raw
+----------------------------------------------------------------------
+   0.0     FORMAL       1770   0.00057792   0.01054879   0.00004460
+   2.0     FORMAL       1242   0.19966012   0.01109570  -0.00271589
+   4.0     FORMAL       1326   0.40007109   0.01257892  -0.00521316
+   6.0     FORMAL       1432   0.59856182   0.01499297  -0.00776758
+   8.0     FORMAL       1576   0.79117871   0.01840561  -0.01078631
+  10.0     FORMAL       1845   0.97389728   0.02292646  -0.01453778
+  12.0     FORMAL       2350   1.14065128   0.02869338  -0.01925209
+  14.0     FORMAL       3234   1.27913681   0.03628973  -0.02478399
+  14.5     FORMAL       4102   1.32799888   0.03723357  -0.02491859
+  15.0     FORMAL       5015   1.35940359   0.03942416  -0.02588518
+  15.5     FORMAL       5954   1.38447715   0.04209989  -0.02679949
+  16.0     FORMAL       6913   1.40438553   0.04523562  -0.02740674

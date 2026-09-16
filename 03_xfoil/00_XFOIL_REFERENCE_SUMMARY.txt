@@ -1,0 +1,325 @@
+NACA0012 / NACA4412
+XFOIL REFERENCE SETUP AND PROVENANCE
+====================================
+
+PURPOSE
+-------
+XFOIL is used as an independent aerodynamic reference for comparison
+with the OpenFOAM RANS calculations.
+
+XFOIL is not treated as experimental truth.
+
+This section documents:
+1. geometry correspondence,
+2. XFOIL numerical setup,
+3. viscous and transition settings,
+4. production polar generation,
+5. panel-density sensitivity,
+6. Cp-data provenance.
+
+
+============================================================
+COMMON XFOIL SETTINGS
+============================================================
+
+XFOIL version:
+    6.99
+
+Production surface panel count:
+    240
+
+Viscous mode:
+    enabled
+
+Reynolds number:
+    Re = 1.0e6
+
+Mach number:
+    M = 0
+
+Maximum XFOIL iterations:
+    200
+
+Transition parameter:
+    Ncrit = 9
+
+XFOIL log interpretation:
+    NcritT = 9
+    NcritB = 9
+
+The XFOIL logs associate Ncrit = 9 with an approximate turbulence
+level of 0.070 %.
+
+Angles of attack in the production polar:
+    0, 2, 4, 6, 8, 10, 12, 14,
+    14.5, 15, 15.5, 16 deg
+
+
+============================================================
+GEOMETRY CORRESPONDENCE
+============================================================
+
+NACA0012
+--------
+Thickness ratio:
+    t = 0.12
+
+The closed/sharp trailing-edge thickness equation uses -0.1036.
+
+A direct analytical comparison of the 481-point XFOIL source geometry
+against the equation used by the OpenFOAM generator produced:
+
+    maximum geometry discrepancy = 1.31e-10
+    mean geometry discrepancy    = 2.71e-11
+
+This is consistent with coordinate-output rounding.
+
+The XFOIL and OpenFOAM NACA0012 geometries therefore represent the same
+analytical sharp-TE airfoil definition.
+
+
+NACA4412
+--------
+Parameters:
+    m = 0.04
+    p = 0.40
+    t = 0.12
+
+Thickness is applied normal to the standard NACA four-digit mean
+camber line.
+
+The XFOIL source geometry and the OpenFOAM reference-coordinate file
+both contain 321 points.
+
+Direct comparison gave:
+
+    maximum |dx| = 0
+    maximum |dy| = 0
+
+The two source-coordinate arrays are exactly identical.
+
+Therefore geometry mismatch is not a plausible explanation for
+differences between the XFOIL and OpenFOAM aerodynamic predictions.
+
+
+============================================================
+NACA0012 PRODUCTION REFERENCE
+============================================================
+
+Production configuration:
+    P240
+
+Input:
+    run_NACA0012_SHARP_TE_V9.in
+
+Primary polar:
+    NACA0012_SHARP_TE_V9_Re1e6_Ncrit9_P240.pol
+
+The production polar contains all 12 required angles from 0 to 16 deg.
+
+Examples:
+
+AoA 0 deg:
+    CL = approximately 0
+    CD = 0.00533
+
+AoA 14 deg:
+    CL = 1.2723
+    CD = 0.02514
+
+AoA 16 deg:
+    CL = 1.2985
+    CD = 0.04024
+
+Selected final Cp reference files are retained for:
+    0, 6, 12 and 16 deg.
+
+Evidence:
+    NACA0012/02_PRODUCTION_P240/
+    NACA0012/04_CP_REFERENCE/
+
+
+============================================================
+NACA0012 PANEL-DENSITY SENSITIVITY
+============================================================
+
+A second XFOIL calculation used:
+    320 panels
+
+All main physical/settings parameters remained unchanged:
+    Re = 1e6
+    M = 0
+    Ncrit = 9
+    ITER = 200
+
+The P320 run covers:
+    0 through 15.5 deg
+
+The 16-deg point was not requested in the P320 input and therefore its
+absence is not a convergence failure.
+
+The P240 and P320 aerodynamic coefficients are close over their common
+angle-of-attack range.
+
+The 240-panel configuration is therefore retained as the production
+XFOIL reference.
+
+This is treated as a panel-density sensitivity assessment and not as
+formal proof of panel independence.
+
+Evidence:
+    NACA0012/03_PANEL_SENSITIVITY_P320/
+
+
+============================================================
+NACA4412 PRODUCTION REFERENCE
+============================================================
+
+Production configuration:
+    P240
+
+Input:
+    run_NACA4412_SHARP_TE_V9_P240.in
+
+Primary polar:
+    NACA4412_SHARP_TE_V9_Re1e6_Ncrit9_P240.pol
+
+A file previously named:
+    NACA4412_SHARP_TE_V9_Re1e6_Ncrit9_FINAL.pol
+
+was verified to be byte-for-byte identical to the P240 production polar.
+
+SHA-256:
+    2846203e456372466e287aefda67b92ca5df370d44c45bc78ad070c9da15dddf
+
+The production P240 polar therefore remains the authoritative reference.
+
+Examples:
+
+AoA 0 deg:
+    CL = 0.4541
+    CD = 0.00672
+    Cm = -0.0964
+
+AoA 14 deg:
+    CL = 1.4972
+    CD = 0.03233
+    Cm = -0.0270
+
+AoA 16 deg:
+    CL = 1.5275
+    CD = 0.04912
+    Cm = -0.0213
+
+At AoA 14 deg the XFOIL boundary-layer solver issued one intermediate:
+
+    MRCHDU: Convergence failed
+
+message.
+
+The calculation subsequently continued through additional iterations,
+reduced the residual, reached:
+
+    CL = 1.4972
+    CD = 0.03233
+    Cm = -0.0270
+
+and the operating point was written to the production polar.
+
+No other convergence-failure messages occurred in the P240 production
+sweep.
+
+The warning is retained in the original run log for transparency.
+
+Evidence:
+    NACA4412/02_PRODUCTION_P240/
+
+
+============================================================
+NACA4412 PANEL-DENSITY SENSITIVITY
+============================================================
+
+The P320 calculation used the same:
+    geometry,
+    Re,
+    Mach number,
+    Ncrit,
+    iteration limit,
+    and angle-of-attack sequence
+
+as the P240 production calculation.
+
+Only the panel count changed:
+    240 -> 320
+
+The resulting aerodynamic coefficients remain close to the P240 values.
+
+For example at AoA 14 deg:
+
+    P240:
+        CL = 1.4972
+        CD = 0.03233
+
+    P320:
+        CL = 1.5071
+        CD = 0.03223
+
+The P320 calculation is therefore retained as a panel-density
+sensitivity check.
+
+Evidence:
+    NACA4412/03_PANEL_SENSITIVITY_P320/
+
+
+============================================================
+NACA4412 Cp REFERENCE
+============================================================
+
+A separate P240 XFOIL batch calculation generated surface Cp
+distributions at all 12 investigated angles.
+
+The Cp-generation calculation retained:
+
+    P240
+    Re = 1e6
+    M = 0
+    ITER = 200
+    Ncrit = 9
+
+Cp distributions are available for:
+
+    0, 2, 4, 6, 8, 10, 12, 14,
+    14.5, 15, 15.5, 16 deg
+
+The AoA14 calculation exhibited the same temporary MRCHDU warning as
+the production-polar calculation and subsequently recovered before the
+solution advanced to AoA14.5.
+
+Evidence:
+    NACA4412/04_CP_REFERENCE/
+
+
+============================================================
+PHYSICAL INTERPRETATION
+============================================================
+
+XFOIL and OpenFOAM do not solve identical aerodynamic models.
+
+The production XFOIL calculations use XFOIL's coupled inviscid/
+boundary-layer approach with transition prediction controlled by
+Ncrit = 9.
+
+The baseline OpenFOAM SST calculations use steady RANS with the
+k-omega SST turbulence model.
+
+Therefore disagreement between XFOIL and OpenFOAM must not
+automatically be interpreted as numerical error.
+
+Possible differences can arise from:
+- turbulence and transition modelling,
+- boundary-layer/separation treatment,
+- numerical discretization,
+- and limitations of each modelling approach.
+
+XFOIL is therefore treated as a comparative reference, not as
+experimental ground truth.

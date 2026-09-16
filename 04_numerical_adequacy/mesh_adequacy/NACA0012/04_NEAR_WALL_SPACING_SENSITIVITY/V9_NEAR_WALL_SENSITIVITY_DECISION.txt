@@ -1,0 +1,119 @@
+NACA0012 V9 NEAR-WALL SENSITIVITY DECISION
+===========================================
+
+Production mesh:
+    Original V9
+
+Sensitivity mesh:
+    V9 with approximately +30% first-layer spacing
+
+Purpose:
+    Test sensitivity of aerodynamic coefficients and wall y+ to the
+    near-wall radial grading. This is a targeted near-wall sensitivity
+    study, not a full grid-convergence study.
+
+GEOMETRIC CHANGE
+----------------
+Original V9 mean first-layer height:
+    1.66442232e-05 m
+
++30% sensitivity mean first-layer height:
+    2.16370786e-05 m
+
+Approximate change:
+    +30%
+
+Both meshes:
+    165220 hexahedral cells
+    332978 points
+    Same geometry and topology
+
+Sensitivity mesh checkMesh:
+    Mesh OK
+    Max aspect ratio        = 206.13456
+    Max non-orthogonality   = 47.867884 deg
+    Avg non-orthogonality   = 11.292084 deg
+    Max skewness            = 1.7475
+
+AOA 0 DEG SST
+-------------
+Original V9:
+    CL = 0.000577918684
+    CD = 0.0105487884
+    Cm = 4.45975816e-05
+
++30% sensitivity:
+    CL = 0.000525690492
+    CD = 0.0104695562
+    Cm = 4.06132448e-05
+
+CD change:
+    approximately -0.75%
+
+Original V9 y+:
+    min = 0.108443
+    avg = 0.382300
+    max = 0.546355
+
++30% sensitivity y+:
+    min = 0.13697109
+    avg = 0.49519991
+    max = 0.71008533
+
+
+AOA 14 DEG SST
+--------------
+Original V9:
+    CL = 1.279137
+    CD = 0.036290
+    Cm = -0.024784
+
++30% sensitivity:
+    CL = 1.28157824
+    CD = 0.0360702395
+    Cm = -0.0246512227
+
+Approximate coefficient changes:
+    CL = +0.19%
+    CD = -0.61%
+    |Cm| change < 1%
+
+Original V9 y+:
+    min = 0.005427
+    avg = 0.360310
+    max = 1.370566
+
++30% sensitivity y+:
+    min = 0.011661228
+    avg = 0.46705884
+    max = 1.7820956
+
++30% AoA14 y+ face distribution:
+    y+ < 0.5          : 669 / 876 faces = 76.37%
+    0.5 <= y+ <= 1.0 : 168 / 876 faces = 19.18%
+    y+ > 1.0          : 39 / 876 faces = 4.45%
+    y+ > 1.5          : 21 / 876 faces = 2.40%
+
+DECISION
+--------
+Retain the original V9 mesh as the production mesh.
+
+Use the +30% first-layer-spacing mesh only as a documented
+near-wall sensitivity study.
+
+Reason:
+At AoA 0 deg, the drag coefficient changed by less than 1%, while
+lift and moment remained close to zero as expected for the symmetric
+NACA0012. At AoA 14 deg, both CL and CD changed by less than 1%.
+Therefore the predicted aerodynamic coefficients show low sensitivity
+to the tested near-wall spacing perturbation.
+
+The +30% mesh produces mean y+ values closer to 0.5, but also raises
+the local maximum y+ at AoA14. There is therefore no numerical basis
+for replacing the already completed V9 production sweep.
+
+The mesh was NOT selected or tuned based on agreement with XFOIL.
+
+Important:
+This study demonstrates near-wall-spacing sensitivity only.
+It is not a complete grid-convergence study.

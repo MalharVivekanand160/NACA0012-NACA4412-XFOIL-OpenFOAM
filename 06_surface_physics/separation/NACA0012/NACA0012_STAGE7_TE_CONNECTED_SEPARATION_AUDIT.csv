@@ -1,0 +1,7 @@
+AoA_deg,TE_connected_separation,separation_start_x_over_c,TE_connected_negative_faces,interpretation
+12.0,False,,0,No sustained TE-connected separation; isolated negative face only
+14.0,True,0.92374600,27,Sustained TE-connected reversed-flow region
+14.5,True,0.90769250,33,Sustained TE-connected reversed-flow region
+15.0,True,0.87290950,46,Sustained TE-connected reversed-flow region
+15.5,True,0.83010050,62,Sustained TE-connected reversed-flow region
+16.0,True,0.77926400,81,Sustained TE-connected reversed-flow region

@@ -1,0 +1,9 @@
+#includeEtc "caseDicts/functions/forces/forcesIncompressible.cfg"
+
+patches     (airfoil);
+
+rhoInf      1.0;
+
+CofR        (0.25 0 0);
+
+pitchAxis   (0 0 1);

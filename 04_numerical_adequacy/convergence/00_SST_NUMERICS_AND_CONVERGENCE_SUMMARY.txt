@@ -1,0 +1,118 @@
+NACA0012 / NACA4412 V9 SST
+NUMERICS AND CONVERGENCE SUMMARY
+================================
+
+FLOW / SOLVER FRAMEWORK
+-----------------------
+OpenFOAM version : 13
+Analysis         : steady-state RANS
+Turbulence model : k-omega SST
+Reynolds number  : 1.0e6
+Chord            : 1 m
+Freestream speed : 15 m/s
+
+SIMPLE residualControl criteria:
+    p      < 1e-4
+    U      < 1e-5
+    k      < 1e-5
+    omega  < 1e-5
+
+
+NACA0012 SST
+============
+
+AoA       Status
+------------------------------
+0.0       FORMAL CONVERGENCE
+2.0       FORMAL CONVERGENCE
+4.0       FORMAL CONVERGENCE
+6.0       FORMAL CONVERGENCE
+8.0       FORMAL CONVERGENCE
+10.0      FORMAL CONVERGENCE
+12.0      FORMAL CONVERGENCE
+14.0      FORMAL CONVERGENCE
+14.5      FORMAL CONVERGENCE
+15.0      FORMAL CONVERGENCE
+15.5      FORMAL CONVERGENCE
+16.0      FORMAL CONVERGENCE
+
+All 12 NACA0012 cases satisfied the specified SIMPLE
+residualControl criteria.
+
+Reported aerodynamic coefficients:
+    final formally converged forceCoeffs row.
+
+For AoA14.5, 15, 15.5 and 16, the recorded convergence indices
+are absolute OpenFOAM continuation indices. The additional
+iterations required after each continuation were:
+
+    AoA14.5 : 868
+    AoA15.0 : 913
+    AoA15.5 : 939
+    AoA16.0 : 959
+
+See:
+    NACA0012_SST/NACA0012_V9_SST_CONVERGENCE_AUDIT.txt
+    NACA0012_SST/NACA0012_V9_SST_REPORTED_COEFFICIENTS.txt
+
+
+NACA4412 SST
+============
+
+AoA       Status
+--------------------------------------------------------
+0.0       FORMAL CONVERGENCE
+2.0       FORMAL CONVERGENCE
+4.0       FORMAL CONVERGENCE
+6.0       FORMAL CONVERGENCE
+8.0       FORMAL CONVERGENCE
+10.0      FORMAL CONVERGENCE
+12.0      FORMAL CONVERGENCE
+14.0      FORMAL CONVERGENCE
+14.5      FORMAL CONVERGENCE
+15.0      STABLE ITERATIVE PLATEAU - NOT FORMAL
+15.5      STABLE ITERATIVE PLATEAU - NOT FORMAL
+16.0      STABLE ITERATIVE PLATEAU - NOT FORMAL
+
+For AoA0 through AoA14.5:
+    reported aerodynamic coefficients are taken from the final
+    formally converged forceCoeffs row.
+
+For AoA15, AoA15.5 and AoA16:
+    formal residualControl convergence was not achieved.
+    However, CL, CD and Cm reached stable iterative plateaus.
+    The reported coefficients are therefore the mean over the
+    final 1000 steady iterations.
+
+These are ITERATIVE-window means and must not be described as
+physical-time averages.
+
+AoA15 was additionally continued from iteration 12000 to 16000
+without changing the mesh, SST model, boundary conditions,
+numerical schemes, relaxation factors or residualControl criteria.
+
+Formal convergence was still not obtained because the k residual
+remained above the 1e-5 criterion, while the integrated aerodynamic
+coefficients remained essentially unchanged. No further continuation
+was therefore used for the reported result.
+
+See:
+    NACA4412_SST/NACA4412_V9_SST_FINAL_CONVERGENCE_AUDIT.txt
+    NACA4412_SST/NACA4412_V9_SST_REPORTED_COEFFICIENTS.txt
+    NACA4412_SST/CANONICAL_FORCE_COEFFICIENT_HISTORIES/
+    NACA4412_SST/RAW_FORCE_COEFFICIENT_HISTORIES/
+
+
+IMPORTANT REPORTING DISTINCTION
+===============================
+
+"FORMAL CONVERGENCE"
+means that the specified OpenFOAM SIMPLE residualControl criteria
+were satisfied.
+
+"STABLE ITERATIVE PLATEAU"
+means that formal residualControl convergence was not satisfied,
+but the aerodynamic quantities of interest showed a bounded,
+stable iterative solution over the selected final iteration window.
+
+The two classifications must not be presented as equivalent.

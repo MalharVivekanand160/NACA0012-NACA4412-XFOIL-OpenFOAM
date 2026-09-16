@@ -1,0 +1,24 @@
+NACA4412 FINAL SHARP-TE GEOMETRY
+
+NACA parameters:
+m = 0.040000
+p = 0.400000
+t = 0.120000
+
+Closed-TE thickness coefficient = -0.1036
+
+Points per surface = 161
+Total exported coordinate points = 321
+
+Leading edge:
+upper = (0.0000000000, 0.0000000000)
+lower = (0.0000000000, 0.0000000000)
+LE gap = 0.000000000000e+00
+
+Trailing edge:
+upper = (1.0000000000, 0.0000000000)
+lower = (1.0000000000, 0.0000000000)
+TE gap = 0.000000000000e+00
+
+Geometry status:
+SHARP/CLOSED TRAILING EDGE

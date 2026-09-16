@@ -1,0 +1,40 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13
+Exec   : foamPostProcess -solver incompressibleFluid -func yPlus -latestTime
+Date   : Aug 09 2026
+Time   : 16:41:36
+Host   : "w1326"
+PID    : 1682943
+I/O    : uncollated
+Case   : <HPC_HOME>/NACA0012_4412_XFOIL_RANS_COMPARISON/NACA0012_CGRID_V1_OpenFOAM/NEW_FILES/03_runs_V9_YPLUS_SENSITIVITY/AoA14/OF_NACA0012_V9_YPLUS_SENS_Re1e6_AoA14_SST
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 3232
+
+Time = 3232s
+Selecting solver incompressibleFluid
+Selecting viscosity model Newtonian
+Selecting turbulence model type RAS
+    Selecting RAS turbulence model kOmegaSST
+No MRF models present
+
+Selecting patchDistMethod meshWave
+yPlus yPlus write:
+    writing object yPlus
+    patch airfoil y+ : min = 0.011661228, max = 1.7820956, average = 0.46705884
+
+
+End
+

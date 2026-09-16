@@ -1,0 +1,39 @@
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      gammaInt;
+}
+
+dimensions      [];
+internalField   uniform 1;
+
+boundaryField
+{
+    airfoil
+    {
+        type zeroGradient;
+    }
+    inlet
+    {
+        type fixedValue;
+        value uniform 1;
+    }
+    top
+    {
+        type zeroGradient;
+    }
+    bottom
+    {
+        type zeroGradient;
+    }
+    outlet
+    {
+        type zeroGradient;
+    }
+    frontAndBack
+    {
+        type empty;
+    }
+}

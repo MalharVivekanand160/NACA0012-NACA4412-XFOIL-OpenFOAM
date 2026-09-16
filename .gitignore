@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+*~
+*.swp
+
+# OpenFOAM generated runtime material not intentionally archived
+processor*/
+VTK/
+dynamicCode/
+core
+core.*
+slurm-*.out
+
+# Temporary/local work
+*.tmp
+*.temp
+
+# Regenerated reproducibility-test outputs
+reproduced/

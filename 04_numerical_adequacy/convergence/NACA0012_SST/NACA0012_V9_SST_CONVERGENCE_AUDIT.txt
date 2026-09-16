@@ -1,0 +1,42 @@
+AoA_CASE     STATUS                 ITERATIONS  
+--------     ------                 ----------  
+AoA00        FORMAL CONVERGENCE     1770        
+AoA02        FORMAL CONVERGENCE     1242        
+AoA04        FORMAL CONVERGENCE     1326        
+AoA06        FORMAL CONVERGENCE     1432        
+AoA08        FORMAL CONVERGENCE     1576        
+AoA10        FORMAL CONVERGENCE     1845        
+AoA12        FORMAL CONVERGENCE     2350        
+AoA14p5      FORMAL CONVERGENCE     4102        
+AoA14        FORMAL CONVERGENCE     3234        
+AoA15p5      FORMAL CONVERGENCE     5954        
+AoA15        FORMAL CONVERGENCE     5015        
+AoA16        FORMAL CONVERGENCE     6913        
+
+------------------------------------------------------------
+HIGH-AOA CONTINUATION INDEX CLARIFICATION
+------------------------------------------------------------
+
+For AoA14p5, AoA15, AoA15p5 and AoA16, the convergence values
+4102, 5015, 5954 and 6913 are absolute OpenFOAM steady-iteration
+indices inherited through the continuation sequence.
+
+They must not be interpreted as fresh iteration counts for each AoA.
+
+Continuation sequence:
+
+    AoA14   converged at absolute index 3234
+    AoA14p5 converged at absolute index 4102
+             additional iterations = 4102 - 3234 = 868
+
+    AoA15   converged at absolute index 5015
+             additional iterations = 5015 - 4102 = 913
+
+    AoA15p5 converged at absolute index 5954
+             additional iterations = 5954 - 5015 = 939
+
+    AoA16   converged at absolute index 6913
+             additional iterations = 6913 - 5954 = 959
+
+All four cases satisfied the same formal SIMPLE residualControl
+criteria used for the remainder of the NACA0012 SST sweep.

@@ -1,0 +1,283 @@
+NACA0012 / NACA4412 V9
+MESH ADEQUACY SUMMARY
+=====================
+
+Purpose
+-------
+This section assesses whether the production meshes are suitable for the
+OpenFOAM RANS calculations.
+
+The assessment considers:
+1. OpenFOAM mesh-quality checks.
+2. Near-wall y+ resolution.
+3. Sensitivity of aerodynamic coefficients to mesh refinement.
+4. For NACA0012, an additional targeted near-wall-spacing sensitivity test.
+
+These checks assess NUMERICAL MESH ADEQUACY.
+They do not by themselves prove that the CFD solution is physically exact
+or experimentally validated.
+
+
+============================================================
+NACA0012
+============================================================
+
+PRODUCTION MESH
+---------------
+Cells               : 165,220
+Cell type            : hexahedral
+Max aspect ratio     : 206.135
+Max non-orthogonality: 47.8679 deg
+Average non-orth.    : 11.3931 deg
+Max skewness         : 1.7475
+OpenFOAM checkMesh   : Mesh OK
+
+Evidence:
+NACA0012/01_PRODUCTION_CHECKMESH/
+
+
+Y+ ASSESSMENT
+-------------
+Production SST sweep:
+AoA = 0, 2, 4, 6, 8, 10, 12, 14, 14.5, 15, 15.5, 16 deg.
+
+Average y+ remained approximately:
+    0.350 to 0.383
+
+Maximum y+:
+    AoA 0  : 0.546
+    AoA 16 : 1.459
+
+Maximum y+ remained below 1 through AoA 6 deg.
+From AoA 8 deg onward, localized wall regions exceeded y+ = 1.
+
+The production mesh therefore provides predominantly low-y+ near-wall
+resolution. The high-AoA exceedances above unity are localized rather
+than representative of the complete airfoil wall.
+
+Evidence:
+NACA0012/02_YPLUS_VALIDATION/
+
+
+SYSTEMATIC THREE-GRID SENSITIVITY
+---------------------------------
+Grid family:
+
+    Coarse      :  82,642 cells
+    Baseline V9 : 165,220 cells
+    Fine        : 330,750 cells
+
+The refinement ratios were approximately sqrt(2).
+
+Representative SST cases were evaluated at AoA 0 and 14 deg.
+
+Baseline V9 -> Fine:
+
+AoA 0:
+    CD change = +0.715 %
+
+AoA 14:
+    CL change = -1.023 %
+    CD change = +1.077 %
+    |Cm| change = +3.385 %
+
+The principal lift and drag coefficients show relatively small
+baseline-to-fine differences.
+
+A formal Grid Convergence Index is NOT reported because all quantities
+did not demonstrate a consistent monotonic/asymptotic sequence across
+the three meshes.
+
+This is therefore reported as a systematic three-grid
+mesh-sensitivity assessment, not proof of formal grid independence.
+
+Evidence:
+NACA0012/03_THREE_GRID_MESH_SENSITIVITY/
+
+
+TARGETED NEAR-WALL-SPACING SENSITIVITY
+--------------------------------------
+Production mean first-layer height:
+    1.66442232e-05 m
+
+Sensitivity mean first-layer height:
+    2.16370786e-05 m
+
+Change:
+    approximately +30 %
+
+Both meshes retained:
+    165,220 hexahedral cells
+    332,978 points
+    same geometry and topology
+
+AoA 0:
+    CD change approximately -0.75 %
+
+AoA 14:
+    CL change approximately +0.19 %
+    CD change approximately -0.61 %
+    |Cm| change < 1 %
+
+Increasing the first-layer spacing therefore produced only small changes
+in the integrated aerodynamic coefficients for the tested cases.
+
+The original V9 mesh was retained.
+
+This is a targeted near-wall-spacing sensitivity test, not a complete
+grid-convergence study.
+
+Evidence:
+NACA0012/04_NEAR_WALL_SPACING_SENSITIVITY/
+
+
+NACA0012 ASSESSMENT
+-------------------
+The production V9 mesh is retained as sufficiently mesh-insensitive for
+the present aerodynamic comparison.
+
+This conclusion is supported by:
+- successful checkMesh validation,
+- predominantly low-y+ wall resolution,
+- systematic three-grid coefficient sensitivity,
+- and a separate near-wall-spacing perturbation test.
+
+
+============================================================
+NACA4412
+============================================================
+
+PRODUCTION MESH
+---------------
+Cells               : 165,220
+Cell type            : hexahedral
+Max aspect ratio     : 206.135
+Max non-orthogonality: 47.8679 deg
+Average non-orth.    : 11.8424 deg
+Max skewness         : 1.7475
+OpenFOAM checkMesh   : Mesh OK
+
+Evidence:
+NACA4412/01_PRODUCTION_CHECKMESH/
+
+
+Y+ ASSESSMENT
+-------------
+Production SST sweep:
+AoA = 0, 2, 4, 6, 8, 10, 12, 14, 14.5, 15, 15.5, 16 deg.
+
+Average y+ remained approximately:
+    0.357 to 0.378
+
+Maximum y+:
+    AoA 0  : 0.593
+    AoA 16 : 1.332
+
+Maximum y+ remained below 1 through AoA 8 deg.
+
+From AoA 10 deg onward, localized wall regions exceeded y+ = 1.
+
+At AoA 16:
+    y+ > 1 occurred on 25 / 876 wall faces
+    = approximately 2.85 % of the wall faces.
+
+The production mesh therefore maintains predominantly low-y+
+near-wall resolution throughout the investigated range.
+
+Evidence:
+NACA4412/02_YPLUS_VALIDATION/
+
+
+TARGETED STREAMWISE MESH SENSITIVITY
+------------------------------------
+Grid family:
+
+    Coarse      :  84,660 cells
+    Baseline V9 : 165,220 cells
+    Fine        : 326,340 cells
+
+Streamwise resolution was systematically varied.
+
+Examples:
+
+                         Coarse   Baseline   Fine
+    n_nose_half             70       140      280
+    n_airfoil_upper        150       300      600
+    n_transition            15        30       60
+    n_wake                 160       320      640
+
+The radial settings were held fixed:
+
+    n_radial              = 75
+    n_wake_y              = 31
+    n_outer_radial        = 33
+    growth_radial         = 1.14
+
+This is therefore a TARGETED STREAMWISE refinement study rather than
+a uniform full-grid refinement study.
+
+Representative SST cases were evaluated at AoA 0 and 14 deg.
+
+Baseline V9 -> Fine:
+
+AoA 0:
+    CL change approximately -0.30 %
+    CD change approximately -2.66 %
+    raw Cm change approximately -0.88 %
+
+AoA 14:
+    CL change approximately +1.16 %
+    CD change approximately -4.59 %
+    raw Cm change approximately +1.76 %
+
+Lift and moment show relatively low sensitivity to additional
+streamwise refinement.
+
+Drag exhibits greater sensitivity, particularly at AoA 14 deg, and this
+must be retained as a numerical uncertainty/limitation when interpreting
+the drag results.
+
+The Fine AoA 0 calculation required continuation after iteration 2000
+and formally converged at absolute OpenFOAM iteration 2248.
+
+The study is NOT presented as a formal GCI or proof of complete
+grid independence because only the streamwise resolution was varied.
+
+Evidence:
+NACA4412/03_STREAMWISE_MESH_SENSITIVITY/
+
+
+NACA4412 ASSESSMENT
+-------------------
+The 165,220-cell V9 production mesh is retained for the present
+comparative aerodynamic study.
+
+The evidence supports reasonable numerical robustness of the main
+aerodynamic trends, particularly CL.
+
+CD shows greater streamwise mesh sensitivity than CL and this limitation
+should be acknowledged quantitatively when interpreting drag differences.
+
+
+============================================================
+OVERALL INTERPRETATION
+============================================================
+
+Both production meshes:
+- contain 165,220 hexahedral cells,
+- pass OpenFOAM checkMesh,
+- provide predominantly low-y+ wall resolution,
+- and have documented mesh-sensitivity evidence.
+
+The NACA0012 and NACA4412 sensitivity studies are not identical:
+
+NACA0012:
+    systematic three-grid mesh sensitivity
+    + independent near-wall-spacing sensitivity.
+
+NACA4412:
+    targeted streamwise mesh sensitivity with radial resolution fixed.
+
+These studies support use of the V9 meshes for the present OpenFOAM
+comparison, but they do not establish exact grid independence,
+experimental validation, or absence of turbulence-model uncertainty.

@@ -1,0 +1,5 @@
+Airfoil,Model,Cases,Mean_abs_Delta_CL_pct,Max_abs_Delta_CL_pct,Mean_abs_Delta_CD_pct,Max_abs_Delta_CD_pct
+NACA0012,SA,9/9,1.81,3.03,5.76,6.21
+NACA0012,SSTLM,8/9,2.61,6.90,20.02,54.63
+NACA4412,SA,9/9,3.46,4.98,4.05,5.24
+NACA4412,SSTLM,3/9,10.63,18.59,30.32,45.09

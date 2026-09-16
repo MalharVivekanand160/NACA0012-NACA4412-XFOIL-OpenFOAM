@@ -1,0 +1,22 @@
+NACA4412 V9 PRODUCTION MESH AUDIT
+=================================
+
+Production case:
+AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST
+
+Individual polyMesh SHA256:
+aa0e42a2a2909e7607bd0be70efad4aa2d7bdd67fe03715a1098a86a4578d5e6  AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST/constant/polyMesh/points
+97738293d9d0803c0e76b7e9731b8201a7a0dc502923008db31866990443e6df  AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST/constant/polyMesh/faces
+6654de77973e7b7bc06a38553090a9b254926a7fa3acba6fd00ffc9c9cbb3dda  AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST/constant/polyMesh/owner
+88dda8d84f8a043b6632ee13aef31c192bf07b388b84c3f045371119c1297996  AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST/constant/polyMesh/neighbour
+bec44af300e029bc11a9dc15ac1c49b1db010d827693820b04b8aa9f640c6fe0  AoA00/OF_NACA4412_V9_Re1e6_AoA00_SST/constant/polyMesh/boundary
+
+Complete production mesh fingerprint:
+098f803a0763974acfa35a7a3757ed7bbed2a12f10d01033af2f4fb7a7d14123  -
+
+Boundary audit:
+airfoil      = wall
+frontAndBack = empty
+
+All 12 SST cases verified with identical production mesh fingerprint:
+098f803a0763974acfa35a7a3757ed7bbed2a12f10d01033af2f4fb7a7d14123

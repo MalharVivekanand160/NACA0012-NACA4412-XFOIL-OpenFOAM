@@ -1,0 +1,45 @@
+NACA0012 SHARP-TE GEOMETRY VERIFICATION
+=======================================
+
+OpenFOAM geometry definition:
+    t = 0.12
+
+Thickness distribution:
+    yt = 5*t*(
+         0.2969*sqrt(x)
+       - 0.1260*x
+       - 0.3516*x^2
+       + 0.2843*x^3
+       - 0.1036*x^4
+    )
+
+The -0.1036 coefficient produces zero thickness at x/c = 1,
+giving a mathematically closed/sharp trailing edge.
+
+XFOIL source geometry:
+    NACA0012_SHARP_TE_V9.dat
+
+Number of source coordinates:
+    481
+
+Direct comparison of the XFOIL coordinates against the analytical
+sharp-TE NACA0012 equation gave:
+
+    Maximum |y - y_expected| = 1.311705230111e-10
+    Mean    |y - y_expected| = 2.711306186345e-11
+
+Coordinate range:
+    xmin = 0.0
+    xmax = 1.0
+
+Trailing-edge coordinates:
+    first point = (1.0,  0.0)
+    last point  = (1.0, -0.0)
+
+Conclusion:
+The XFOIL source geometry and the OpenFOAM production geometry are based
+on the same analytical NACA0012 sharp-trailing-edge definition.
+
+XFOIL subsequently repanels this source geometry using PANE. Therefore
+the numerical surface-node locations do not need to match the OpenFOAM
+C-grid wall-node locations.

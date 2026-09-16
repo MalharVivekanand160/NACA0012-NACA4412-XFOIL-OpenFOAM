@@ -1,0 +1,49 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      k;
+}
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 1.5e-08;
+
+boundaryField
+{
+    airfoil
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+
+    inlet
+    {
+        type            freestream;
+        freestreamValue uniform 1.5e-08;
+    }
+
+    top
+    {
+        type            freestream;
+        freestreamValue uniform 1.5e-08;
+    }
+
+    bottom
+    {
+        type            freestream;
+        freestreamValue uniform 1.5e-08;
+    }
+
+    outlet
+    {
+        type            freestream;
+        freestreamValue uniform 1.5e-08;
+    }
+
+    frontAndBack
+    {
+        type            empty;
+    }
+}

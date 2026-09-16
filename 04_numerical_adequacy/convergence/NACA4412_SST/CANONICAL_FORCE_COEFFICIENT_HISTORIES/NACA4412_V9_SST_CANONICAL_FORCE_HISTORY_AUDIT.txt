@@ -1,0 +1,159 @@
+NACA4412 V9 SST — CANONICAL FORCE HISTORY AUDIT
+================================================
+
+Raw forceCoeffs files are preserved unchanged in:
+RAW_FORCE_COEFFICIENT_HISTORIES/
+
+Canonical histories merge restart segments by OpenFOAM iteration/time index.
+If duplicate indices occur at a restart boundary, the later segment is retained.
+No interpolation or averaging is applied during merging.
+
+------------------------------------------------
+AoA00
+------------------------------------------------
+Segments:
+           0 : 1103 rows
+Input rows      : 1103
+Unique rows     : 1103
+Duplicates      : 0
+First index     : 0
+Last index      : 1102
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA00_CANONICAL.dat
+
+------------------------------------------------
+AoA02
+------------------------------------------------
+Segments:
+           0 : 1216 rows
+Input rows      : 1216
+Unique rows     : 1216
+Duplicates      : 0
+First index     : 0
+Last index      : 1215
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA02_CANONICAL.dat
+
+------------------------------------------------
+AoA04
+------------------------------------------------
+Segments:
+           0 : 1310 rows
+Input rows      : 1310
+Unique rows     : 1310
+Duplicates      : 0
+First index     : 0
+Last index      : 1309
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA04_CANONICAL.dat
+
+------------------------------------------------
+AoA06
+------------------------------------------------
+Segments:
+           0 : 1462 rows
+Input rows      : 1462
+Unique rows     : 1462
+Duplicates      : 0
+First index     : 0
+Last index      : 1461
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA06_CANONICAL.dat
+
+------------------------------------------------
+AoA08
+------------------------------------------------
+Segments:
+           0 : 1626 rows
+Input rows      : 1626
+Unique rows     : 1626
+Duplicates      : 0
+First index     : 0
+Last index      : 1625
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA08_CANONICAL.dat
+
+------------------------------------------------
+AoA10
+------------------------------------------------
+Segments:
+           0 : 1775 rows
+Input rows      : 1775
+Unique rows     : 1775
+Duplicates      : 0
+First index     : 0
+Last index      : 1774
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA10_CANONICAL.dat
+
+------------------------------------------------
+AoA12
+------------------------------------------------
+Segments:
+           0 : 2006 rows
+Input rows      : 2006
+Unique rows     : 2006
+Duplicates      : 0
+First index     : 0
+Last index      : 2005
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA12_CANONICAL.dat
+
+------------------------------------------------
+AoA14
+------------------------------------------------
+Segments:
+           0 : 3167 rows
+Input rows      : 3167
+Unique rows     : 3167
+Duplicates      : 0
+First index     : 0
+Last index      : 3166
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA14_CANONICAL.dat
+
+------------------------------------------------
+AoA14p5
+------------------------------------------------
+Segments:
+           0 : 9657 rows
+        9600 : 301 rows
+Input rows      : 9958
+Unique rows     : 9901
+Duplicates      : 57
+First index     : 0
+Last index      : 9900
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA14p5_CANONICAL.dat
+
+------------------------------------------------
+AoA15
+------------------------------------------------
+Segments:
+           0 : 9600 rows
+        9500 : 2501 rows
+       12000 : 4001 rows
+Input rows      : 16102
+Unique rows     : 16001
+Duplicates      : 101
+First index     : 0
+Last index      : 16000
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA15_CANONICAL.dat
+
+------------------------------------------------
+AoA15p5
+------------------------------------------------
+Segments:
+           0 : 9484 rows
+        9400 : 2601 rows
+Input rows      : 12085
+Unique rows     : 12001
+Duplicates      : 84
+First index     : 0
+Last index      : 12000
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA15p5_CANONICAL.dat
+
+------------------------------------------------
+AoA16
+------------------------------------------------
+Segments:
+           0 : 8001 rows
+        8000 : 4001 rows
+Input rows      : 12002
+Unique rows     : 12001
+Duplicates      : 1
+First index     : 0
+Last index      : 12000
+Canonical file  : CANONICAL_FORCE_COEFFICIENT_HISTORIES/forceCoeffs_AoA16_CANONICAL.dat
+

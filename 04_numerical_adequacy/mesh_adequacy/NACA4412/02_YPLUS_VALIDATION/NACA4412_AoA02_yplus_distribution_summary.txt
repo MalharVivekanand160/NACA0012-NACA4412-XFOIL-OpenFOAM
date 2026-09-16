@@ -1,0 +1,22 @@
+==============================================
+NACA4412 AoA02 y+ DISTRIBUTION
+==============================================
+Wall faces      : 876
+
+Minimum y+      : 0.02551176
+Median y+       : 0.35947156
+Average y+      : 0.37747244
+Maximum y+      : 0.61271396
+
+y+ < 0.5        :  769 ( 87.79 %)
+0.5 <= y+ <= 1 :  107 ( 12.21 %)
+y+ > 1          :    0 (  0.00 %)
+y+ > 1.2        :    0 (  0.00 %)
+
+Maximum located at:
+  x/c           : 0.00148158
+  y/c           : 0.01071955
+  surface       : upper
+  y+            : 0.61271396
+
+Written: NACA4412_AoA02_yplus_distribution.csv

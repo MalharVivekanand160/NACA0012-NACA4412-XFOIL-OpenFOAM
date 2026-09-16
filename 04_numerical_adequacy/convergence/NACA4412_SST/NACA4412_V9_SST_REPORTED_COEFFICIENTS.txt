@@ -1,0 +1,27 @@
+NACA4412 V9 SST — AUTHORITATIVE REPORTED COEFFICIENTS
+=====================================================
+
+Reporting rule:
+  FORMAL cases : final formally converged iteration
+  STABLE cases : mean over final 1000 steady iterations
+
+The stable-case averaging window is an ITERATIVE window,
+not a physical-time average.
+
+Cm values below are RAW OpenFOAM values. Moment-sign alignment
+with XFOIL is intentionally handled separately.
+
+   AoA       Status           Cl           Cd       Cm_raw             Window
+------------------------------------------------------------------------------
+   0.0       FORMAL   0.39679833   0.01266873   0.09015340          1102-1102
+   2.0       FORMAL   0.59597412   0.01470631   0.08767864          1215-1215
+   4.0       FORMAL   0.79123990   0.01754767   0.08470634          1309-1309
+   6.0       FORMAL   0.97850904   0.02113994   0.08077539          1461-1461
+   8.0       FORMAL   1.15499375   0.02567513   0.07590839          1625-1625
+  10.0       FORMAL   1.31584472   0.03135584   0.06992120          1774-1774
+  12.0       FORMAL   1.45007675   0.03846318   0.06231111          2005-2005
+  14.0       FORMAL   1.56476008   0.04697185   0.05533659          3166-3166
+  14.5       FORMAL   1.59390299   0.04909920   0.05409176          9900-9900
+  15.0       STABLE   1.60833533   0.05237965   0.05229873        15001-16000
+  15.5       STABLE   1.61997610   0.05611518   0.05091534        11001-12000
+  16.0       STABLE   1.63200065   0.06051891   0.05057555        11001-12000

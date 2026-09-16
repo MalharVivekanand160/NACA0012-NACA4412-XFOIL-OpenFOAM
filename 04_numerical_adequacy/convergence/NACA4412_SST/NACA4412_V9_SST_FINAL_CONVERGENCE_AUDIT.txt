@@ -1,0 +1,108 @@
+NACA4412 V9 SST — FINAL CONVERGENCE AUDIT
+==========================================
+
+Residual-control criteria:
+    p      < 1e-4
+    U      < 1e-5
+    k      < 1e-5
+    omega  < 1e-5
+
+FORMAL = OpenFOAM SIMPLE residualControl satisfied.
+STABLE = no formal marker, but final force coefficients form a stable iterative plateau.
+
+============================================================
+AoA00
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1102 iterations
+Reported final row: 1102            	9.01534047e-02	1.26687337e-02	3.96798325e-01	2.88552567e-01	1.08245758e-01
+
+============================================================
+AoA02
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1215 iterations
+Reported final row: 1215            	8.76786386e-02	1.47063087e-02	5.95974116e-01	3.85665697e-01	2.10308420e-01
+
+============================================================
+AoA04
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1309 iterations
+Reported final row: 1309            	8.47063417e-02	1.75476716e-02	7.91239898e-01	4.80326291e-01	3.10913607e-01
+
+============================================================
+AoA06
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1461 iterations
+Reported final row: 1461            	8.07753867e-02	2.11399437e-02	9.78509040e-01	5.70029907e-01	4.08479133e-01
+
+============================================================
+AoA08
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1625 iterations
+Reported final row: 1625            	7.59083907e-02	2.56751330e-02	1.15499375e+00	6.53405264e-01	5.01588483e-01
+
+============================================================
+AoA10
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 1774 iterations
+Reported final row: 1774            	6.99212021e-02	3.13558414e-02	1.31584472e+00	7.27843564e-01	5.88001160e-01
+
+============================================================
+AoA12
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 2005 iterations
+Reported final row: 2005            	6.23111062e-02	3.84631781e-02	1.45007675e+00	7.87349482e-01	6.62727269e-01
+
+============================================================
+AoA14
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 3166 iterations
+Reported final row: 3166            	5.53365906e-02	4.69718535e-02	1.56476008e+00	8.37716630e-01	7.27043449e-01
+
+============================================================
+AoA14p5
+============================================================
+STATUS: FORMAL CONVERGENCE
+SIMPLE solution converged in 9900 iterations
+Reported final row: 9900            	5.40917594e-02	4.90992000e-02	1.59390299e+00	8.51043255e-01	7.42859736e-01
+
+============================================================
+AoA15
+============================================================
+STATUS: STABLE ITERATIVE PLATEAU — NOT FORMALLY CONVERGED
+Latest force row: 16000           	5.24547054e-02	5.24945095e-02	1.60864292e+00	8.56776167e-01	7.51866757e-01
+
+Final 1000-iteration statistics:
+Cm mean = 0.0522987329   range = 0.0521576148 to 0.0524674928
+Cd mean = 0.0523796502   range = 0.0522775265 to 0.0524974773
+Cl mean = 1.6083353273   range = 1.6080679400 to 1.6086627400
+
+============================================================
+AoA15p5
+============================================================
+STATUS: STABLE ITERATIVE PLATEAU — NOT FORMALLY CONVERGED
+Latest force row: 12000           	5.11633874e-02	5.63461853e-02	1.62049084e+00	8.61408807e-01	7.59082033e-01
+
+Final 1000-iteration statistics:
+Cm mean = 0.0509153393   range = 0.0506343265 to 0.0512572210
+Cd mean = 0.0561151839   range = 0.0558615096 to 0.0563798128
+Cl mean = 1.6199761007   range = 1.6194370400 to 1.6206706800
+
+============================================================
+AoA16
+============================================================
+STATUS: STABLE ITERATIVE PLATEAU — NOT FORMALLY CONVERGED
+Latest force row: 12000           	5.00908545e-02	6.00686625e-02	1.63106147e+00	8.65621591e-01	7.65439882e-01
+
+Final 1000-iteration statistics:
+Cm mean = 0.0505755486   range = 0.0500364684 to 0.0510775876
+Cd mean = 0.0605189139   range = 0.0600274150 to 0.0609675694
+Cl mean = 1.6320006531   range = 1.6309865700 to 1.6329111500
+

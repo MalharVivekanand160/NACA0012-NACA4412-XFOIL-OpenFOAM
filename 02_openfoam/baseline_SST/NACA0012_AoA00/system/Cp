@@ -1,0 +1,12 @@
+type            pressure;
+libs            ("libfieldFunctionObjects.so");
+
+field           p;
+result          Cp;
+
+calcTotal       no;
+calcCoeff       yes;
+
+pInf            0;
+UInf            (15 0 0);
+rhoInf          1;
